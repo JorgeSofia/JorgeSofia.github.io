@@ -1,5 +1,3 @@
-<!--- Boilerplate code -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,17 +11,89 @@
     <link rel="stylesheet" href="css/all.min.css">
     <!--- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Candal|Lora&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Candal', sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 0;
+            margin-top: 30px;
+        }
+
+        li {
+            width: calc(33.33% - 30px); /* One-third of the page minus margin */
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            overflow: hidden;
+        }
+
+        li:hover {
+            transform: translateY(-5px);
+        }
+
+        img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            padding: 10px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #007bff;
+        }
+    </style>
 </head>
 
 <body>
     <header>
-       <h1>Sintomas e Descrição de Doenças do Lenho da Videira</h1> 
+        <h1>Sintomas e Descrição de Doenças do Lenho da Videira</h1>
     </header>
-    
+
     <ul>
-        <li><a href="http://repositoriobiologico.com.br/jspui/bitstream/123456789/1131/1/boletim-doencas-pragas-videiras.pdf">Livro de Doenças e Pragas da Videira</a></li>
-        <li><a href="https://www.drapc.gov.pt/base/documentos/folheto.pdf">Folheto de Doenças do Lenho</a></li>
-        <li><a href="https://www.drapc.gov.pt/base/documentos/doencas_lenho_botriosferiose-escoriose-esca.pdf">Síndromes de Doenças do Lenho</a></li>
+        <li>
+            <a href="http://repositoriobiologico.com.br/jspui/bitstream/123456789/1131/1/boletim-doencas-pragas-videiras.pdf">
+                <img src="thumbnails/livro.jpg" alt="Thumbnail 1">
+                Livro de Doenças e Pragas da Videira
+            </a>
+        </li>
+        <li>
+            <a href="https://www.drapc.gov.pt/base/documentos/folheto.pdf">
+                <img src="thumbnails/folheto.jpg" alt="Thumbnail 2">
+                Folheto de Doenças do Lenho
+            </a>
+        </li>
+        <li>
+            <a href="https://www.drapc.gov.pt/base/documentos/doencas_lenho_botriosferiose-escoriose-esca.pdf">
+                <img src="thumbnails/escoriose.jpg" alt="Thumbnail 3">
+                Síndromes de Doenças do Lenho
+            </a>
+        </li>
         <!-- Add more links here as needed -->
     </ul>
 
