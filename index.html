@@ -42,7 +42,7 @@
 
         li {
             width: calc(50% - 20px); /* Two elements per row minus margin */
-            height: 200px; /* Fixed height for li elements */
+            height: 500px; /* Increased height for li elements */
             margin-bottom: 30px;
             position: relative; /* Add relative positioning for the li container */
             border-radius: 10px; /* Rounded corners */
@@ -108,9 +108,13 @@
     <script>
         // Center the last li item if the number of items is odd
         document.addEventListener('DOMContentLoaded', function () {
+            const ulElement = document.querySelector('ul');
             const liElements = document.querySelectorAll('ul li');
-            if (liElements.length % 2 === 1) {
-                liElements[liElements.length - 1].style.marginLeft = 'auto';
+            const isOdd = liElements.length % 2 === 1;
+            if (isOdd) {
+                const lastLi = liElements[liElements.length - 1];
+                const marginLeft = (ulElement.offsetWidth - lastLi.offsetWidth) / 2;
+                lastLi.style.marginLeft = marginLeft + 'px';
             }
         });
     </script>
