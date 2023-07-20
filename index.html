@@ -83,25 +83,25 @@
 
         li:hover img {
             transform: scale(1.2); /* Apply zoom-in effect on hover */
-            filter: brightness(70%) blur(8px); /* Apply darkening effect and blur on hover */
+            filter: brightness(70%) blur(10px); /* Apply darkening effect and blur on hover */
         }
 
         .title-overlay {
+            width: 100%; /* Make the title span the full width of the li element */
+            padding: 40px;
             position: absolute;
-            top: 50%;
+            top: 85%;
             left: 50%;
             transform: translate(-50%, -50%);
             color: #fff;
             font-size: 32px; /* Increased font size for better readability */
             font-weight: 700;
             text-align: center;
-            opacity: 0; /* Hide the title by default */
+            opacity: 1; /* Hide the title by default */
             transition: opacity 0.3s ease-in-out;
             pointer-events: none; /* Prevent the overlay from blocking clicks */
-        }
-
-        li:hover .title-overlay {
-            opacity: 1; /* Show the title on hover */
+            backdrop-filter: brightness(70%) blur(10px); /* Apply darkening effect and blur on hover */
+            transition: backdrop-filter 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transition on hover */
         }
 
         a {
