@@ -87,22 +87,21 @@
         }
 
         .title-overlay {
-            width: 100%; /* Make the title span the full width of the li element */
-            height: 20%; /* Make the title span the full height of the li element */
-            padding: 0px;
             position: absolute;
-            top: 90%;
+            top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             color: #fff;
             font-size: 32px; /* Increased font size for better readability */
             font-weight: 700;
             text-align: center;
-            opacity: 1; /* Hide the title by default */
+            opacity: 0; /* Hide the title by default */
             transition: opacity 0.3s ease-in-out;
             pointer-events: none; /* Prevent the overlay from blocking clicks */
-            backdrop-filter: brightness(70%) blur(10px); /* Apply darkening effect and blur on hover */
-            transition: backdrop-filter 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transition on hover */
+        }
+
+        li:hover .title-overlay {
+            opacity: 1; /* Show the title on hover */
         }
 
         a {
