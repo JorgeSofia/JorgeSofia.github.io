@@ -10,21 +10,24 @@
     <!--- Font Awesome -->
     <link rel="stylesheet" href="css/all.min.css">
     <!--- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Candal|Lora&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Candal', sans-serif;
+            font-family: 'Roboto', sans-serif;
             line-height: 1.6;
+            background-color: #f8f8f8; /* Light gray, almost white background */
+            color: #333; /* Dark text color */
         }
 
         header {
-            background-color: #f8f9fa;
+            background-color: #f8f8f8; /* Same light gray background as the rest of the page */
             text-align: center;
             padding: 30px 0;
         }
 
         h1 {
             font-size: 2.5rem;
+            font-weight: 700;
             margin-bottom: 0;
         }
 
@@ -38,29 +41,34 @@
         }
 
         li {
-            width: calc(33.33% - 30px); /* One-third of the page minus margin */
+            width: calc(50% - 20px); /* Two elements per row minus margin */
+            height: 200px; /* Fixed height for li elements */
             margin-bottom: 30px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
-            overflow: hidden;
+            position: relative; /* Add relative positioning for the li container */
+            border-radius: 10px; /* Rounded corners */
+            overflow: hidden; /* Hide the overflowing image */
         }
 
-        li:hover {
-            transform: translateY(-5px);
+        li:hover img {
+            transform: scale(1.2); /* Apply zoom-in effect on hover */
         }
 
         img {
             width: 100%;
-            height: 200px;
-            object-fit: cover;
+            height: 100%;
+            object-fit: cover; /* Fill the li element with the image */
             object-position: center;
+            position: absolute; /* Absolute positioning inside the li container */
+            top: 0;
+            left: 0;
+            transition: transform 0.3s ease-in-out; /* Smooth transition on hover */
         }
 
         a {
             display: block;
             text-align: center;
             padding: 10px;
-            color: #333;
+            color: #333; /* Dark text color for links */
             text-decoration: none;
         }
 
@@ -97,5 +105,14 @@
         <!-- Add more links here as needed -->
     </ul>
 
+    <script>
+        // Center the last li item if the number of items is odd
+        document.addEventListener('DOMContentLoaded', function () {
+            const liElements = document.querySelectorAll('ul li');
+            if (liElements.length % 2 === 1) {
+                liElements[liElements.length - 1].style.marginLeft = 'auto';
+            }
+        });
+    </script>
 </body>
 </html>
